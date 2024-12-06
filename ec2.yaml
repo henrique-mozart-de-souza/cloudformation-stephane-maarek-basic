@@ -1,5 +1,7 @@
 Resources:
-  s3Bucket:
-    Type: AWS::S3::Bucket
-    Properties: null
-    BucketName: cloudformationHenriqueMozart
+  myec2:
+    Type: AWS::EC2::Instance
+    Properties:
+      KeyName: 
+      ImageId: 
+      InstanceType: 
