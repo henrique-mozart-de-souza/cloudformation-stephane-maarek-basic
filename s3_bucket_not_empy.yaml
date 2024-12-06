@@ -1,5 +1,5 @@
 Resources:
   s3Bucket:
     Type: AWS::S3::Bucket
-    Properties: null
-    BucketName: cloudformationHenriqueMozart
+    Properties: 
+      BucketName: cloudformationhenriquemozart
