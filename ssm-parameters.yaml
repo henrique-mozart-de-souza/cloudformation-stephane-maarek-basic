@@ -8,7 +8,7 @@ Parameters:
   ImageId:
     Type: AWS::SSM::Parameter::Value<String>
     Default: /aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2
-#Abaixo, são é o recursos EC2 sendo criado propriamente
+#Abaixo, é o recursos EC2 sendo criado propriamente
 Resources:
   MyEC2Instance:
     Type: AWS::EC2::Instance
