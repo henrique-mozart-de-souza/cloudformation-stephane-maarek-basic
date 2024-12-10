@@ -1,0 +1,17 @@
+#Parametros são como se fosse variaveis onde contem os apontamentos para a construção do recurso
+Parameters:
+  InstanceType:
+    Description: Webserver EC2 Instance type
+    Type: AWS::SSM::Parameter::Value<String>
+    Default: /dev/ec2/instanceType
+
+  ImageId:
+    Type: AWS::SSM::Parameter::Value<String>
+    Default: /aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2
+#Abaixo, são é o recursos EC2 sendo criado propriamente
+Resources:
+  MyEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: !Ref InstanceType
+      ImageId: !Ref ImageId
