@@ -1,0 +1,18 @@
+Parameters:
+  ImageId:
+    Type: AWS::SSM::Parameter::Value<String>
+    Default: /aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2
+  InstanceType:
+    Description: Webserver EC2 Instance type
+    Type: AWS::SSM::Parameter::Value<String>
+    Default: /dev/ec2/instanceType
+
+Resources:
+  MySecureInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: !Ref ImageId
+      InstanceType: !Ref InstanceType
+      SecurityGroups:
+        - !ImportValue SSHSecurityGroup
+#Para esse script funciona precisa rodar o outputs.yaml primeiro para criar a saida.
